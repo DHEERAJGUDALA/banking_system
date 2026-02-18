@@ -11,7 +11,8 @@ private final double balanceAfter;
 private final LocalDateTime timestamp;
 private final String description;
 
-public Transaction(String transactionId, TransactionType type , double amount, String accountId, double balanceAfter, String description){
+public Transaction(String transactionId, TransactionType type , double amount, String accountId, double balanceAfter,
+                   String description){
     this.transactionId=transactionId;
     this.type=type;
     this.amount=amount;

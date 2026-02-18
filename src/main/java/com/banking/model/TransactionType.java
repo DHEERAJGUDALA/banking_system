@@ -7,7 +7,7 @@ public enum TransactionType {
     INTEREST("Interest");
 
     private final String displayName;
-    TransacionType(String displayName){
+    TransactionType(String displayName){
         this.displayName=displayName;
     }
     public String getDisplayName(){
