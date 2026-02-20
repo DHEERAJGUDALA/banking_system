@@ -14,12 +14,12 @@ public abstract class Account {
     private final List<Transaction> transactions = new ArrayList<>();
 
     protected Account(Builder<?> builder){
-        this.accountId = accountId;
-        this.holderName=holderName;
-        this.balance = balance ;
-        this.interestRate=  interestRate;
-        this.minimumBalance=minimumBalance;
-        this.active=active;
+        this.accountId = builder.accountId;
+        this.holderName = builder.holderName;
+        this.balance = builder.balance;
+        this.interestRate = builder.interestRate;
+        this.minimumBalance = builder.minimumBalance;
+        this.active = builder.active;
     }
     public void deposit(double amount){
         if(amount<=0){
@@ -56,6 +56,7 @@ public abstract class Account {
     public String getHolderName(){
         return holderName;
     }
+    public double getBalance() { return balance; }
     public double getInterestRate(){
         return interestRate;
     }
@@ -63,13 +64,13 @@ public abstract class Account {
         return active;
     }
     public void setActive(boolean active){
-        this.balance=balance;
+        this.active = active;
     }
 
     protected void setBalance(double balance){
         this.balance=balance;
     }
-    public List<Transaction>getTransaction(){
+    public List<Transaction> getTransactions(){
         return Collections.unmodifiableList(transactions);
     }
 
