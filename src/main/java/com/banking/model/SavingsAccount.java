@@ -16,4 +16,21 @@ public class SavingsAccount extends Account {
         return 0;
     }
     @Override
+    public String getAccountType(){
+        return "Savings";
+    }
+    public double getMinBalanceForInterest(){
+        return minBalanceForInterest;
+    }
+    public static class Builder extends Account.Builder<Builder>{
+        private double minBalanceForInterest=1000;
+        public Builder(String accountId,String holderName){
+            super(accountId,holderName);
+        }
+        public Builder minBalanceForInterest(double minBalanceForInterest){
+            this.minBalanceForInterest=minBalanceForInterest;
+            return self();
+        }
+        @Override
+    }
 }
