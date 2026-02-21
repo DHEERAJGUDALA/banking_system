@@ -8,9 +8,12 @@ public class SavingsAccount extends Account {
     }
     @Override
     public double calculateInterest(){
-        if(getBalance()>=minBlanaceForInterest){
+        if(getBalance()>=minBalanceForInterest){
             double interest = getBalance()*getInterestRate();
-
+            deposit(interest);
+            return interest;
         }
+        return 0;
     }
+    @Override
 }
