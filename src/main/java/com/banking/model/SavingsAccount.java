@@ -36,5 +36,8 @@ public class SavingsAccount extends Account {
             return this;
         }
         @Override
+        public SavingsAccount build(){
+            return new SavingsAccount(this);
+        }
     }
 }
