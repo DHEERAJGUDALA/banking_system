@@ -32,5 +32,9 @@ public class SavingsAccount extends Account {
             return self();
         }
         @Override
+        protected Builder self(){
+            return this;
+        }
+        @Override
     }
 }
