@@ -18,4 +18,14 @@ private LoanAccount(Builder builder){
     recordTransaction(TransactionType.DEPOSIT,amount,"Loan Payment");
 }
 @Override
+    public double calculateInterest(){
+    if(getBalance()>0){
+        double interest=getBalance()*getInterestRate();
+        setBalance(getBalance()+interest);
+        recordTransaction(TransactionType.INTEREST,interest,"Loan Interest Charged");
+        return interest;
+    }
+    return 0;
+}
+@Override
 }
