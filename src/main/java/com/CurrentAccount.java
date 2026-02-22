@@ -21,5 +21,22 @@ private CurrentAccount(Builder builder){
     public double calculateInterest(){
     return 0;
 }
+@Override
+    public String getAccountType(){
+    return "Current";
+}
+public double getOverdraftLimit(){
+    return overdraftLimit;
+}
 
+public static class Builder extends Account.Builder<Builder>{
+    private double overdraftLimit=10000;
+    public Builder(String accountId,String holderName){
+        super(accountId,holderName);
+    }
+    public Builder overdraftLimit(double overdraftLimit){
+        this.overdraftLimit=overdraftLimit;
+    }
+    @Override
+  }
 }
