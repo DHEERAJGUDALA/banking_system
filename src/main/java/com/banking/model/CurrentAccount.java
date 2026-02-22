@@ -1,4 +1,4 @@
-package com;
+package com.banking.model;
 
 public class CurrentAccount extends Account{
 private final double overdraftLimit;
@@ -36,7 +36,15 @@ public static class Builder extends Account.Builder<Builder>{
     }
     public Builder overdraftLimit(double overdraftLimit){
         this.overdraftLimit=overdraftLimit;
+        return self();
     }
     @Override
+    protected Builder self(){
+        return this;
+    }
+    @Override
+    public CurrentAccount build(){
+        return new CurrentAccount(this);
+    }
   }
-}
+ }
