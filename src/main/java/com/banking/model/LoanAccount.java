@@ -28,4 +28,30 @@ private LoanAccount(Builder builder){
     return 0;
 }
 @Override
+    public String getAccountType(){
+    return "Loan";
+}
+public double getOriginalLoanAmount(){
+    return originalLoanAmount;
+}
+public double getRemainingBalance(){
+    return getBalance();
+}
+
+public static class Builder extends Account.Builder<Builder>{
+    private double originalLoanAmount;
+    public Builder(String accountId,String holderName,double loanAmount){
+        super(accountId,holderName);
+        this.originalLoanAmount=loanAmount;
+        balance(loanAmount);
+    }
+    @Override
+    protected Builder self(){
+        return this;
+    }
+    @Override
+    public LoanAccount build(){
+        return new LoanAccount(this);
+    }
+  }
 }
