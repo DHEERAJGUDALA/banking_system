@@ -18,4 +18,8 @@ private CurrentAccount(Builder builder){
     recordTransaction(TransactionType.WITHDRAWAL,amount,"Withdrawal (Current)");
 }
 @Override
+    public double calculateInterest(){
+    return 0;
+}
+
 }
