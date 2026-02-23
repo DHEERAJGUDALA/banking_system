@@ -17,6 +17,10 @@ private LoanAccount(Builder builder){
     setBalance(getBalance()-amount);
     recordTransaction(TransactionType.DEPOSIT,amount,"Loan Payment");
 }
+    @Override
+    public void withdraw(double amount) {
+        throw new UnsupportedOperationException("Cannot withdraw from a loan account");
+    }
 @Override
     public double calculateInterest(){
     if(getBalance()>0){
