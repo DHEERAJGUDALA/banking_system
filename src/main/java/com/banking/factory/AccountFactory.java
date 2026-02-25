@@ -7,7 +7,7 @@ import com.banking.model.SavingsAccount;
 
 public class AccountFactory {
     private static final double DEFAULT_SAVINGS_INTEREST=0.04;
-    private static final double DEFUALT_LOAN_INTEREST=0.08;
+    private static final double DEFAULT_LOAN_INTEREST=0.08;
     private static final double DEFAULT_OVERDRAFT_LIMIT=50000;
 
     public static Account createAccount(AccountType type, String accountId, String holderName,double initialAmount){
