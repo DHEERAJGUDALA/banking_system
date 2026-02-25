@@ -1,4 +1,6 @@
 package com.banking.strategy;
 
-public class InterestStrategy {
+public interface InterestStrategy {
+    double calculateInterest(double balance,double rate);
+    String getStrategyName();
 }
